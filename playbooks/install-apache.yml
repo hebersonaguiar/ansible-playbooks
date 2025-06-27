@@ -3,4 +3,4 @@
   hosts: ubuntu_servers
   become: true
   roles:
-    - { role: apache2, tags: ["apache2"] }
+    - { role: apache, tags: ["apache"] }

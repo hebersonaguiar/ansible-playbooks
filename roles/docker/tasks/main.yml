@@ -1,0 +1,69 @@
+---
+- name: Atualizar todos os pacotes
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Instalar dependências
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - gnupg
+    state: present
+
+- name: Adicionar chave GPG do Docker
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Adicionar repositório Docker
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+    state: present
+    filename: docker
+
+- name: Instalar Docker
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+    update_cache: yes
+
+- name: Garantir que o serviço Docker está iniciado
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Adicionar usuário ao grupo docker
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes
+
+- name: Baixar Docker Compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: '0755'
+
+- name: Verificar versão do Docker
+  command: docker --version
+  register: docker_version
+  changed_when: false
+
+- name: Verificar versão do Docker Compose
+  command: docker-compose --version
+  register: compose_version
+  changed_when: false
+
+- name: Mostrar versões instaladas
+  debug:
+    msg: |
+      Docker: {{ docker_version.stdout }}
+      Docker Compose: {{ compose_version.stdout }}

@@ -72,6 +72,13 @@ ansible_python_interpreter=/usr/bin/python3
 
 ---
 
+## Validar Conectividade - AD-HOC
+
+```bash
+ansible-playbook -i inventories/production/hosts.ini -m ping
+```
+
+
 ## Variáveis Dinâmicas (`group_vars/all.yml`)
 
 Exemplo de variáveis configuráveis para instalação, ajute conforme a necessidade:

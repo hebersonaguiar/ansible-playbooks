@@ -7,6 +7,6 @@
     - { role: nginx, tags: ["nginx"] }
     - { role: ntp, tags: ["ntp"] }
     - { role: docker, tags: ["docker"] }
-    - { role: apache2, tags: ["apache2"] }
+    - { role: apache, tags: ["apache"] }
     - { role: zabbix, tags: ["zabbix"] }
     - { role: haproxy, tags: ["haproxy"] }
