@@ -133,7 +133,7 @@ ansible-playbook -i inventories/production/hosts.ini playbooks/install-haproxy.y
 
 ## Executando por Tags
 
-Combinação de instalação de serviços usando o playbook `combo.yml` com tags:
+Combinação de instalação de serviços usando o playbook `multi-install.yml` com tags:
 
 ```yaml
 ---
@@ -153,5 +153,5 @@ Combinação de instalação de serviços usando o playbook `combo.yml` com tags
 Exemplo:
 
 ```bash
-ansible-playbook -i inventories/production/hosts.ini playbooks/combo.yml --tags "update,nginx,ntp"
+ansible-playbook -i inventories/production/hosts.ini playbooks/multi-install.yml --tags "update,nginx,ntp"
 ```
