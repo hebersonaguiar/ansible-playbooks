@@ -1,5 +1,5 @@
 
-# Projeto Ansible - Servidores Ubuntu 24.04.2
+# Ansible Playbooks
 
 Este projeto tem como objetivo automatizar a atualização do sistema e a instalação de serviços como Docker, Apache, NGINX, NTP, Zabbix Agent e HAProxy em servidores Ubuntu 24.04.2 usando Ansible.
 
