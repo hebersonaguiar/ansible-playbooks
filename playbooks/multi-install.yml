@@ -1,8 +1,12 @@
 ---
-- name: Combo - update, nginx & ntp
+- name: Multi Install Services
   hosts: ubuntu_servers
   become: true
   roles:
     - { role: common, tags: ["update"] }
     - { role: nginx, tags: ["nginx"] }
     - { role: ntp, tags: ["ntp"] }
+    - { role: docker, tags: ["docker"] }
+    - { role: apache2, tags: ["apache2"] }
+    - { role: zabbix, tags: ["zabbix"] }
+    - { role: haproxy, tags: ["haproxy"] }

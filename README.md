@@ -137,7 +137,7 @@ Combinação de instalação de serviços usando o playbook `combo.yml` com tags
 
 ```yaml
 ---
-- name: Combo de serviços
+- name: Multi Install Services
   hosts: ubuntu_servers
   become: true
   roles:
