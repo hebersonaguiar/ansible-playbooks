@@ -27,16 +27,22 @@ ansible-docker/
 │   ├── common/
 │   │   └── tasks/main.yml
 │   ├── docker/
+│   │   ├── handler/main.yml
 │   │   └── tasks/main.yml
 │   ├── nginx/
+│   │   ├── handler/main.yml
 │   │   └── tasks/main.yml
 │   ├── apache/
+│   │   ├── handler/main.yml
 │   │   └── tasks/main.yml
 │   ├── ntp/
+│   │   ├── handler/main.yml
 │   │   └── tasks/main.yml
 │   ├── zabbix/
+│   │   ├── handler/main.yml
 │   │   └── tasks/main.yml
 │   └── haproxy/
+│       ├── handler/main.yml
 │       └── tasks/main.yml
 └── README.md
 ```
