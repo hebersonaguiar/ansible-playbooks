@@ -1,0 +1,6 @@
+---
+- name: Instalar Apache2
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: apache2, tags: ["apache2"] }

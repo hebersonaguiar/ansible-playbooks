@@ -1,0 +1,11 @@
+- name: Instalar HAProxy
+  apt:
+    name: haproxy
+    state: present
+    update_cache: yes
+
+- name: Habilitar e iniciar HAProxy
+  service:
+    name: haproxy
+    enabled: yes
+    state: started

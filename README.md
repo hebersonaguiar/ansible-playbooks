@@ -22,28 +22,22 @@ ansible-docker/
 │   ├── install-ntp.yml
 │   ├── install-zabbix-agent.yml
 │   ├── install-haproxy.yml
-│   └── combo.yml
+│   └── multi-install.yml
 ├── roles/
 │   ├── common/
 │   │   └── tasks/main.yml
 │   ├── docker/
-│   │   ├── tasks/main.yml
-│   │   └── defaults/main.yml
+│   │   └── tasks/main.yml
 │   ├── nginx/
-│   │   ├── tasks/main.yml
-│   │   └── defaults/main.yml
+│   │   └── tasks/main.yml
 │   ├── apache/
-│   │   ├── tasks/main.yml
-│   │   └── defaults/main.yml
+│   │   └── tasks/main.yml
 │   ├── ntp/
-│   │   ├── tasks/main.yml
-│   │   └── defaults/main.yml
+│   │   └── tasks/main.yml
 │   ├── zabbix/
-│   │   ├── tasks/main.yml
-│   │   └── defaults/main.yml
+│   │   └── tasks/main.yml
 │   └── haproxy/
-│       ├── tasks/main.yml
-│       └── defaults/main.yml
+│       └── tasks/main.yml
 └── README.md
 ```
 

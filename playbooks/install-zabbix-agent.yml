@@ -1,0 +1,6 @@
+---
+- name: Instalar HaProxy
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: zabbix-agent, tags: ["zabbix-agent"] }

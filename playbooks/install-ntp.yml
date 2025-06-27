@@ -1,0 +1,6 @@
+---
+- name: Instalar NTP
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: ntp, tags: ["ntp"] }

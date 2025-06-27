@@ -1,0 +1,19 @@
+# Docker
+docker_compose_version: "2.26.1"
+docker_compose_path: "/usr/local/bin/docker-compose"
+
+# NGINX
+nginx_default_port: 80
+
+# Apache
+apache_default_port: 80
+
+# NTP
+ntp_server: "pool.ntp.org"
+
+# Zabbix
+zabbix_server: "192.168.1.100"
+zabbix_agentd_conf: "/etc/zabbix/zabbix_agentd.conf"
+
+# HAProxy
+haproxy_cfg_path: "/etc/haproxy/haproxy.cfg"

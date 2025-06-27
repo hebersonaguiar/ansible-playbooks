@@ -1,0 +1,6 @@
+---
+- name: Atualizar o sistema operacional
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: common, tags: ["common"] }

@@ -1,0 +1,6 @@
+---
+- name: Instalar NGINX
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: nginx, tags: ["nginx"] }

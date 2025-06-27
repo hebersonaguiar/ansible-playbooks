@@ -1,0 +1,11 @@
+- name: Instalar NTP
+  apt:
+    name: ntp
+    state: present
+    update_cache: yes
+
+- name: Habilitar e iniciar NTP
+  service:
+    name: ntp
+    enabled: yes
+    state: started

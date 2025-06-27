@@ -1,0 +1,6 @@
+---
+- name: Instalar Docker
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: docker, tags: ["docker"] }
