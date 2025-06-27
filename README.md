@@ -5,7 +5,7 @@ Este projeto tem como objetivo automatizar a atualização do sistema e a instal
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 ansible-docker/
@@ -49,7 +49,7 @@ ansible-docker/
 
 ---
 
-## ⚙️ Pré-requisitos
+## Pré-requisitos
 
 - Servidores Ubuntu 24.04.2 acessíveis via SSH
 - Um usuário com permissões sudo (ex: `devops`)
@@ -62,7 +62,7 @@ sudo apt update && sudo apt install -y ansible sshpass
 
 ---
 
-## 📦 Inventário (`inventories/production/hosts.ini`)
+## Inventário (`inventories/production/hosts.ini`)
 
 ```ini
 [ubuntu_servers]
@@ -78,9 +78,9 @@ ansible_python_interpreter=/usr/bin/python3
 
 ---
 
-## 🔧 Variáveis Dinâmicas (`group_vars/all.yml`)
+## Variáveis Dinâmicas (`group_vars/all.yml`)
 
-Aqui estão as principais variáveis configuráveis que você pode ajustar conforme suas necessidades:
+Exemplo de variáveis configuráveis para instalação, ajute conforme a necessidade:
 
 ```yaml
 # Docker
@@ -104,13 +104,13 @@ zabbix_agentd_conf: "/etc/zabbix/zabbix_agentd.conf"
 haproxy_cfg_path: "/etc/haproxy/haproxy.cfg"
 ```
 
-Você pode referenciar essas variáveis nos templates ou diretamente nos `tasks/main.yml` de cada role.
+As variáveis podem ser referenciadas nos templates ou diretamente nos `tasks/main.yml` de cada role.
 
 ---
 
-## 🚀 Executando Playbooks
+## Executando Playbooks
 
-Execute os playbooks desejados de forma separada:
+Executando os playbooks de forma separada:
 
 ```bash
 # Atualizar o sistema
@@ -137,9 +137,9 @@ ansible-playbook -i inventories/production/hosts.ini playbooks/install-haproxy.y
 
 ---
 
-## 🧩 Executando por Tags
+## Executando por Tags
 
-Você pode combinar serviços usando o playbook `combo.yml` com tags:
+Combinação de instalação de serviços usando o playbook `combo.yml` com tags:
 
 ```yaml
 ---
@@ -156,25 +156,8 @@ Você pode combinar serviços usando o playbook `combo.yml` com tags:
     - { role: haproxy, tags: ["haproxy"] }
 ```
 
-Execute com:
+Exemplo:
 
 ```bash
 ansible-playbook -i inventories/production/hosts.ini playbooks/combo.yml --tags "update,nginx,ntp"
-```
-
----
-
-## 🧾 Créditos
-
-Projeto desenvolvido com base nas boas práticas de automação com Ansible. Ideal para times de infraestrutura que desejam controle e modularidade na instalação de serviços Linux.
-
----
-
-Se desejar, você pode zipar ou versionar esse projeto em um repositório Git:
-
-```bash
-zip -r ansible-docker.zip ansible-docker/
-# ou
-cd ansible-docker
-git init
 ```
