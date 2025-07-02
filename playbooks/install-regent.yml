@@ -1,0 +1,6 @@
+---
+- name: Instalar Regent
+  hosts: ubuntu_servers
+  become: true
+  roles:
+    - { role: regent, tags: ["regent"] }

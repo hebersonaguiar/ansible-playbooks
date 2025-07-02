@@ -10,3 +10,4 @@
     - { role: apache, tags: ["apache"] }
     - { role: zabbix, tags: ["zabbix"] }
     - { role: haproxy, tags: ["haproxy"] }
+    - { role: regent, tags: ["regent"] }

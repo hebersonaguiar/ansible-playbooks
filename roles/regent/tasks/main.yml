@@ -1,0 +1,5 @@
+- name: Instalar Regent
+  become: true
+  shell: "curl -s {{ regent_server_url }}/{{ regent_id }}/one-sphere-agent-linux-install | bash"
+  args:
+    executable: /bin/bash

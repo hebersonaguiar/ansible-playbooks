@@ -1,5 +1,5 @@
 ---
-- name: Instalar HaProxy
+- name: Instalar Zabbix Agent
   hosts: ubuntu_servers
   become: true
   roles:

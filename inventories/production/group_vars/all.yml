@@ -17,3 +17,7 @@ zabbix_agentd_conf: "/etc/zabbix/zabbix_agentd.conf"
 
 # HAProxy
 haproxy_cfg_path: "/etc/haproxy/haproxy.cfg"
+
+# Regent
+regent_server_url: "http://10.61.0.4/one/repo/deployment/agent"
+regent_id: "4bd7170b-4a1d-4303-9053-a5376021a821"
